@@ -10,11 +10,11 @@ function Home() {
         </header>
         <section>
             <h3>Become a member:</h3>
-            <Link path="/registerUser">
-                <Button btnText="FIND LOCAL TRUCKS"/>
+            <Link to='/registerUser'>
+                <Button component={Link} to='/registerUser' btnText='FIND LOCAL TRUCKS'/>
             </Link>
-            <Link path="/registerTruckOwner">
-                <Button btnText="HOST YOUR TRUCKS"/>
+            <Link to="/registerTruckOwner">
+                <Button btnText='HOST YOUR TRUCKS'/>
             </Link>
         </section>
     </div>
