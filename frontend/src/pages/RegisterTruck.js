@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import RegistrationInput from '../components/RegistrationInput'
+import FormInput from '../components/FormInput'
 
 function RegisterTruck() {
 
@@ -25,28 +25,28 @@ function RegisterTruck() {
       <section>
         <form>
           <h2>Register</h2>
-          <RegistrationInput
+          <FormInput
           type='text'
           value={formData.name}
           placeholder='Enter your first and last name' 
           name='name'
           onChange={onChange}
           />
-          <RegistrationInput
+          <FormInput
           type='text'
           value={formData.username}
           placeholder='Enter a username' 
           name='username'
           onChange={onChange}
           />
-          <RegistrationInput
+          <FormInput
           type='password'
           value={formData.password}
           placeholder='Enter password' 
           name='password'
           onChange={onChange}
           />
-          <RegistrationInput 
+          <FormInput 
           type='password'
           value={formData.password2}
           placeholder='Confirm password'

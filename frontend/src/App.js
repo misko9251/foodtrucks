@@ -2,6 +2,8 @@ import './App.css';
 import Home from './pages/Home';
 import Registration from './pages/Registration'
 import RegisterTruck from './pages/RegisterTruck'
+import Foodtruck from './pages/Foodtruck'
+import Foodtrucks from './pages/Foodtrucks';
 import {
   BrowserRouter as Router,
   Route,
@@ -16,6 +18,8 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/registerUser' element={<Registration />} />
           <Route path='/registerTruckOwner' element={<RegisterTruck />} />
+          <Route path='/myFoodTruck' element={<Foodtruck />} />
+          <Route path='/foodtrucks' element={<Foodtrucks />} />
         </Routes>
       </Router>
     </div>
