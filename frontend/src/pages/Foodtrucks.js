@@ -11,7 +11,6 @@ function Foodtrucks(props) {
     })
 
     const onMarkerClick = (props, marker, e) => {
-      console.log(props)
       setState({
         selectedPlace: props.name,
         activeMarker: marker,
@@ -23,7 +22,7 @@ function Foodtrucks(props) {
     <Map
       google = {props.google}
       style = {{width: "50%", height: "50%"}}
-      zoom = {10}
+      zoom = {12}
       initialCenter={{ lat: 42.886448, lng: -78.878372}}
       >
         <Marker 
@@ -44,5 +43,5 @@ function Foodtrucks(props) {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ''
+  apiKey: 'AIzaSyBmfPiMXGZERuHwbIDrWMyS-lKBG0jDvik'
 })(Foodtrucks)
