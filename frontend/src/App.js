@@ -1,7 +1,8 @@
 import './App.css';
 import Home from './pages/Home';
 import Registration from './pages/Registration'
-import RegisterTruck from './pages/RegisterTruck'
+import RegisterTruckVendor from './pages/RegisterTruckVendor'
+import AddTruck from './pages/AddTruck';
 import Foodtruck from './pages/Foodtruck'
 import Foodtrucks from './pages/Foodtrucks';
 import {
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/registerUser' element={<Registration />} />
-          <Route path='/registerTruckOwner' element={<RegisterTruck />} />
+          <Route path='/registerTruckOwner' element={<RegisterTruckVendor />} />
+          <Route path='/addTruck' element={<AddTruck />} />
           <Route path='/myFoodTruck' element={<Foodtruck />} />
           <Route path='/foodtrucks' element={<Foodtrucks />} />
         </Routes>

@@ -1,8 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Map, GoogleApiWrapper, Marker, InfoWindow} from 'google-maps-react'
 
  
 function Foodtrucks(props) {
+
+  const [trucks, setTrucks] = useState([])
+  
+  useEffect(()=>{
+    async function fetchData(){
+      try {
+        const response = await fetch(
+          'http://localhost:2006/trucks/getTrucks',
+        );
+        const json = await response.json()
+        setTrucks(json.trucks)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData()
+  }, [])
 
     const [state, setState] = useState({
       showingInforWindow: false,
@@ -16,29 +33,39 @@ function Foodtrucks(props) {
         activeMarker: marker,
         showingInforWindow: !state.showingInforWindow
       })
-    }
+    }  
+
+    const Markers = trucks.map((item, index)=>{
+      return(
+        <Marker 
+        key={index}
+        name={item.name} 
+        position={{ lat: item.lat, lng: item.lng}} 
+        onClick={onMarkerClick}
+        />
+      )
+    })
 
     return (
-    <Map
+      <>
+      <Map
       google = {props.google}
       style = {{width: "50%", height: "50%"}}
       zoom = {12}
       initialCenter={{ lat: 42.886448, lng: -78.878372}}
       >
-        <Marker 
-        name='Queen City Food Truck' 
-        position={{ lat: 42.886448, lng: -78.878372}} 
-        onClick={onMarkerClick}
-        />
+          {Markers}
           <InfoWindow
           marker={state.activeMarker}
           visible={state.showingInforWindow}
           >
             <div>
-              <h1>{state.selectedPlace}</h1>
+              <h1>{state.activeMarker.name}</h1>
             </div>
           </InfoWindow>
+
       </Map>
+      </>
     );
 }
 

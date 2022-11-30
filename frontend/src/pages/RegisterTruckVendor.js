@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import FormInput from '../components/FormInput'
 
-function RegisterTruck() {
+function RegisterTruckVendor() {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -60,4 +60,4 @@ function RegisterTruck() {
   )
 }
 
-export default RegisterTruck
+export default RegisterTruckVendor
