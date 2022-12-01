@@ -5,8 +5,8 @@ module.exports = {
         try {
             const truck = await Truck.create({
                 name: req.body.name,
-                lat: req.body.lat,
-                lng: req.body.lng
+                coordinates: req.body.coordinates,
+                address: req.body.address
             })
             res.status(201).json({truck: truck})
         } catch (error) {

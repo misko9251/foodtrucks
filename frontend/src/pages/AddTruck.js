@@ -5,11 +5,9 @@ function AddTruck() {
 
     const [formData, setFormData] = useState({
         name: '',
-        lat: '',
-        lng: ''
+        coordinates: '',
+        address: ''
     })
-
-    console.log(formData)
 
     const onChange = (e) => {
         setFormData((prevValue)=>{
@@ -22,18 +20,33 @@ function AddTruck() {
 
     const onSubmit = async (e) => {
         e.preventDefault()
+        const response = await fetch(
+            `https://maps.googleapis.com/maps/api/geocode/json?address=${formData.address}&key=AIzaSyAM_ZDWScTtrIjcZGGgrGSv-HC3PYz3u0U`
+        )
+        const data = await response.json()
+        const coords = (data.results[0].geometry.location)
+        setFormData((prevVal)=>{
+            return{
+                ...prevVal,
+                coordinates: coords
+            }
+        })
+        postToDB()
+    }
+
+    async function postToDB(){
         try {
-        const formInfo = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(formData)
-        }
-            const response = await fetch('http://localhost:2006/trucks/addTruck', formInfo)
-            const json = await response.json()
-            console.log(json)
-        } catch (error) {
-            console.log(error)
-        }
+            const formInfo = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            }
+                const response = await fetch('http://localhost:2006/trucks/addTruck', formInfo)
+                const json = await response.json()
+                console.log(json)
+            } catch (error) {
+                console.log(error)
+            }
     }
 
 
@@ -53,17 +66,10 @@ function AddTruck() {
                 onChange={onChange}
                 />
                 <input 
-                name='lat'
+                name='address'
                 type='text'
-                placeholder="Enter your truck's latitude"
-                value={formData.lat}
-                onChange={onChange}
-                />
-                <input 
-                name='lng'
-                type='text'
-                placeholder="Enter your truck's longitude"
-                value={formData.lng}
+                placeholder="Enter your truck's address"
+                value={formData.address}
                 onChange={onChange}
                 />
                 <button>Submit</button>

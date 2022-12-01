@@ -40,7 +40,7 @@ function Foodtrucks(props) {
         <Marker 
         key={index}
         name={item.name} 
-        position={{ lat: item.lat, lng: item.lng}} 
+        position={item.coordinates } 
         onClick={onMarkerClick}
         />
       )
@@ -51,7 +51,7 @@ function Foodtrucks(props) {
       <Map
       google = {props.google}
       style = {{width: "50%", height: "50%"}}
-      zoom = {12}
+      zoom = {10}
       initialCenter={{ lat: 42.886448, lng: -78.878372}}
       >
           {Markers}
@@ -72,3 +72,4 @@ function Foodtrucks(props) {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyBmfPiMXGZERuHwbIDrWMyS-lKBG0jDvik'
 })(Foodtrucks)
+

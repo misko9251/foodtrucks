@@ -5,12 +5,12 @@ const truckSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lat: {
-        type: Number,
+    coordinates: {
+        type: Object,
         required: true
     },
-    lng: {
-        type: Number,
+    address: {
+        type: String,
         required: true
     }
 })
