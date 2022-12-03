@@ -8,8 +8,8 @@ const truckRoutes = require('./routes/truckRoutes')
 connectDB()
 
 // Middleware
-app.use(express.urlencoded({ extended: true }));    // use express to parse the form data
-app.use(express.json());    // use express to parse json data
+app.use(express.urlencoded({limit: '50mb', extended: true }));    // use express to parse the form data
+app.use(express.json({limit: '50mb'}));    // use express to parse json data
 app.use(cors({
     origin: 'http://localhost:3000'
 }))
