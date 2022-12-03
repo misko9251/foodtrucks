@@ -42,8 +42,6 @@ function AddTruck() {
             }
     }
 
-
-
   return (
     <>
         <header>

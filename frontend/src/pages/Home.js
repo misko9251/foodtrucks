@@ -1,12 +1,21 @@
 import React from 'react'
 import Button from '../components/Button'
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom'
+import Logo from '../images/logo.png'
 
 function Home() {
   return (
     <div>
         <header>
-            <h1>716 Food Trucks</h1>    
+            <nav>
+                <ul>
+                    <li>VIEW TRUCKS</li>
+                    <li>BECOME A VENDOR</li>
+                </ul>
+            </nav>
+            <div className='logo-container'>
+                <img className='logo' src={Logo} alt='foodtruck logo'/>
+            </div>
         </header>
         <section>
             <h3>Become a member:</h3>
