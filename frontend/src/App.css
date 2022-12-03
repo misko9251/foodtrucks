@@ -47,9 +47,8 @@ body{
 }
 
 nav{
-	border-bottom: 1px solid black;
 	background-color: rgb(204, 83, 52);
-	height: 75px;
+	height: 65px;
 }
 
 .logo-container{
@@ -62,4 +61,32 @@ nav{
 .logo{
 	max-width:100%;
 	max-height:100%;
+}
+
+.btn-container-home{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5%;
+}
+
+button{
+	height: 3rem;
+	width: 80%;
+	background-color: rgb(251, 233, 112);
+	border: 1px solid black;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.btn-logo{
+	display: inline-block;
+	border: 1px solid black;
+	background-color: rgb(251, 233, 112);
+	border-radius: 50%;
+	padding: 1rem;
+	position: relative;
+	left: .7rem;
 }

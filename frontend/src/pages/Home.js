@@ -2,7 +2,9 @@ import React from 'react'
 import Button from '../components/Button'
 import {Link} from 'react-router-dom'
 import Logo from '../images/logo.png'
-
+import {BiMapPin} from 'react-icons/bi'
+import {BsTruck} from 'react-icons/bs'
+import {BsPersonPlus} from 'react-icons/bs'
 function Home() {
   return (
     <div>
@@ -20,24 +22,15 @@ function Home() {
         <section>
             <div>
                 <div>
-                    logo <Button btnText='FIND FOODTRUCKS'/>
+                    <Button logo={<BiMapPin fontSize='40px'/>} btnText='FIND FOODTRUCKS'/>
                 </div>
                 <div>
-                    logo <Button btnText='BROWSE ALL FOODTRUCKS'/>
+                    <Button logo={<BsTruck fontSize='40px' />} btnText='BROWSE ALL FOODTRUCKS'/>
+                </div>
+                <div>
+                    <Button logo={<BsPersonPlus fontSize='40px' />} btnText='BECOME A VENDOR'/>
                 </div>
             </div>
-        </section>
-
-
-
-        <section>
-            <h3>Become a member:</h3>
-            <Link to='/registerUser'>
-                <Button component={Link} to='/registerUser' btnText='FIND LOCAL TRUCKS'/>
-            </Link>
-            <Link to="/registerTruckOwner">
-                <Button btnText='HOST YOUR TRUCKS'/>
-            </Link>
         </section>
     </div>
   )
