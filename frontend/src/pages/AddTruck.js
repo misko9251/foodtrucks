@@ -10,7 +10,6 @@ function AddTruck() {
     })
     const [fileInputState, setFileInputState] = useState('');
     const [previewSource, setPreviewSource] = useState('');
-    const [selectedFile, setSelectedFile] = useState('');
 
     const onChange = (e) => {
         setFormData((prevValue)=>{
