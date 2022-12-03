@@ -5,6 +5,7 @@ import RegisterTruckVendor from './pages/RegisterTruckVendor'
 import AddTruck from './pages/AddTruck';
 import Foodtruck from './pages/Foodtruck'
 import Foodtrucks from './pages/Foodtrucks';
+import TruckSetup from './pages/TruckSetup';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +23,7 @@ function App() {
           <Route path='/addTruck' element={<AddTruck />} />
           <Route path='/myFoodTruck' element={<Foodtruck />} />
           <Route path='/foodtrucks' element={<Foodtrucks />} />
+          <Route path='/truckSetup' element={<TruckSetup />} />
         </Routes>
       </Router>
     </div>

@@ -18,6 +18,19 @@ function Home() {
             </div>
         </header>
         <section>
+            <div>
+                <div>
+                    logo <Button btnText='FIND FOODTRUCKS'/>
+                </div>
+                <div>
+                    logo <Button btnText='BROWSE ALL FOODTRUCKS'/>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
             <h3>Become a member:</h3>
             <Link to='/registerUser'>
                 <Button component={Link} to='/registerUser' btnText='FIND LOCAL TRUCKS'/>
