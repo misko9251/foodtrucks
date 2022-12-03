@@ -12,6 +12,10 @@ const truckSchema = new mongoose.Schema({
     address: {
         type: String,
         required: true
+    },
+    image: {
+        type: String,
+        required: true
     }
 })
 
