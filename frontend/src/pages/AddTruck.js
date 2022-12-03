@@ -3,12 +3,6 @@ import Foodtrucks from './Foodtrucks'
 
 function AddTruck() {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        coordinates: '',
-        address: ''
-    })
-
     const onChange = (e) => {
         setFormData((prevValue)=>{
             return {
@@ -18,6 +12,12 @@ function AddTruck() {
         })
     }
 
+    const [formData, setFormData] = useState({
+        name: '',
+        coordinates: '',
+        address: ''
+    })
+    
     const onSubmit = async (e) => {
         e.preventDefault()
         const response = await fetch(
@@ -25,25 +25,18 @@ function AddTruck() {
         )
         const data = await response.json()
         const coords = (data.results[0].geometry.location)
-        setFormData((prevVal)=>{
-            return{
-                ...prevVal,
-                coordinates: coords
-            }
-        })
-        postToDB()
+        postToDB(coords)
     }
 
-    async function postToDB(){
+    async function postToDB(coordinates){
         try {
             const formInfo = {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(formData)
+                body: JSON.stringify({...formData, coordinates})
             }
                 const response = await fetch('http://localhost:2006/trucks/addTruck', formInfo)
                 const json = await response.json()
-                console.log(json)
             } catch (error) {
                 console.log(error)
             }

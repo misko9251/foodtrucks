@@ -36,11 +36,13 @@ function Foodtrucks(props) {
     }  
 
     const Markers = trucks.map((item, index)=>{
+      let latitude = item.coordinates.lat
+      let longitude = item.coordinates.lng
       return(
         <Marker 
         key={index}
         name={item.name} 
-        position={item.coordinates } 
+        position={{lat: latitude, lng: longitude}} 
         onClick={onMarkerClick}
         />
       )

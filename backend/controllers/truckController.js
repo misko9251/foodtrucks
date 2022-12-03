@@ -9,6 +9,7 @@ module.exports = {
                 address: req.body.address
             })
             res.status(201).json({truck: truck})
+            console.log(req.body)
         } catch (error) {
             console.log(error)
         }
