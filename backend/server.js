@@ -26,11 +26,7 @@ app.use(
         secret: 'keyboardcat', // set the secret key for the session
         resave: false,  // don't save session if unmodified
         saveUninitialized: false,   // don't create session until something stored
-        store: MongoStore.create({mongoUrl:process.env.MONGO_STRING}),
-        cookie: {
-          sameSite: 'none',
-          secure: true,
-        }
+        store: MongoStore.create({mongoUrl:process.env.MONGO_STRING})
     }))
 
 // Set passport middleware
@@ -41,6 +37,9 @@ app.use(passport.session())
 
 app.use('/trucks', truckRoutes)
 app.use('/auth', authRoutes)
+app.get('/getUser', (req, res)=>{
+    res.send(req.user._id)
+})
 
 app.listen(process.env.PORT, (req, res)=>{
     console.log(`Server running on Port ${process.env.PORT}`)

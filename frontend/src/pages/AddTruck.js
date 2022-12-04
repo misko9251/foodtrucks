@@ -42,6 +42,7 @@ function AddTruck() {
     async function postToDB(coordinates){
         try {
             const formInfo = {
+                credentials: 'include',
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({...formData, coordinates, previewSource})

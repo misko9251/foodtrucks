@@ -6,11 +6,13 @@ module.exports = {
         try {
             const fileStr = req.body.previewSource
             const result = await cloudinary.uploader.upload(fileStr);
+
             const truck = await Truck.create({
                 name: req.body.name,
                 coordinates: req.body.coordinates,
                 address: req.body.address,
-                image: result.secure_url
+                image: result.secure_url,
+                userId: req.user._id
             })
             res.status(201).json({truck: truck})
         } catch (error) {
