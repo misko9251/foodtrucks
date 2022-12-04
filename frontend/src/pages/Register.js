@@ -12,6 +12,12 @@ function Register() {
   })
 
   const [errors, setErrors] = useState([])
+  const errorMessages = errors.map((item, index)=>{
+    return (
+      <p style={{color: 'red'}} key={index}>{item.errorMsg}</p>
+    )
+  })
+
 
   const onChange = (e) => {
     e.preventDefault()
@@ -32,13 +38,13 @@ function Register() {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)
     }
-    const response = await fetch('http://localhost:2006/auth/registerVendor')
-    const json = response.json()
-    if(!response.ok){
-      setErrors(json)
-    }else{
-      return
-    }
+    const response = await fetch('http://localhost:2006/auth/registerVendor', formInfo)
+    const json = await response.json()
+   if(!response.ok){
+    setErrors(json)
+   }else{
+    return
+   }
 
   }
 
@@ -47,35 +53,36 @@ function Register() {
       <section>
         <form onSubmit={onSubmit}>
           <h2>Truck Vendor Registration</h2>
-          <FormInput
+          {errors.length > 0 && errorMessages}
+          <input
           type='text'
           value={formData.firstName}
           placeholder='First name' 
-          name='name'
+          name='firstName'
           onChange={onChange}
           />
-          <FormInput
+          <input
           type='text'
           value={formData.lastName}
           placeholder='Last name' 
-          name='username'
+          name='lastName'
           onChange={onChange}
           />
-          <FormInput
+          <input
           type='text'
           value={formData.email}
           placeholder='Email' 
-          name='password'
+          name='email'
           onChange={onChange}
           />
-          <FormInput 
+          <input 
           type='password'
           value={formData.password}
           placeholder='Password'
-          name='password2'
+          name='password'
           onChange={onChange}
           />
-          <FormInput 
+          <input 
           type='password'
           value={formData.password2}
           placeholder='Confirm password'
