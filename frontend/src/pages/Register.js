@@ -4,8 +4,9 @@ import FormInput from '../components/FormInput'
 function Register() {
 
   const [formData, setFormData] = useState({
-    name: '',
-    username: '',
+    firstName: '',
+    lastName: '',
+    email: '',
     password: '',
     password2: ''
   })
@@ -28,26 +29,33 @@ function Register() {
     <>
       <section>
         <form onSubmit={onSubmit}>
-          <h2>Register</h2>
+          <h2>Truck Vendor Registration</h2>
           <FormInput
           type='text'
-          value={formData.name}
-          placeholder='Enter your first and last name' 
+          value={formData.firstName}
+          placeholder='First name' 
           name='name'
           onChange={onChange}
           />
           <FormInput
           type='text'
-          value={formData.username}
-          placeholder='Enter a username' 
+          value={formData.lastName}
+          placeholder='Last name' 
           name='username'
           onChange={onChange}
           />
           <FormInput
+          type='text'
+          value={formData.email}
+          placeholder='Email' 
+          name='password'
+          onChange={onChange}
+          />
+          <FormInput 
           type='password'
           value={formData.password}
-          placeholder='Enter password' 
-          name='password'
+          placeholder='Password'
+          name='password2'
           onChange={onChange}
           />
           <FormInput 
