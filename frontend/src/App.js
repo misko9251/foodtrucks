@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import Registration from './pages/Registration'
-import RegisterTruckVendor from './pages/RegisterTruckVendor'
+import Register from './pages/Register'
 import AddTruck from './pages/AddTruck';
 import Foodtruck from './pages/Foodtruck'
 import Foodtrucks from './pages/Foodtrucks';
@@ -19,11 +19,10 @@ function App() {
       <MobileNav/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/registerUser' element={<Registration />} />
-          <Route path='/registerTruckOwner' element={<RegisterTruckVendor />} />
-          <Route path='/addTruck' element={<AddTruck />} />
           <Route path='/myFoodTruck' element={<Foodtruck />} />
           <Route path='/foodtrucks' element={<Foodtrucks />} />
+          <Route path='register' element={<Register />} />
+          <Route path='/addTruck' element={<AddTruck />} />
         </Routes>
       </Router>
     </div>

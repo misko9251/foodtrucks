@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import FormInput from '../components/FormInput'
 
-function RegisterTruckVendor() {
+function Register() {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -20,10 +20,14 @@ function RegisterTruckVendor() {
     })
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <section>
-        <form>
+        <form onSubmit={onSubmit}>
           <h2>Register</h2>
           <FormInput
           type='text'
@@ -60,4 +64,4 @@ function RegisterTruckVendor() {
   )
 }
 
-export default RegisterTruckVendor
+export default Register
