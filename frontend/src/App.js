@@ -1,6 +1,5 @@
 import './App.css';
 import Home from './pages/Home';
-import Registration from './pages/Registration'
 import Register from './pages/Register'
 import AddTruck from './pages/AddTruck';
 import Foodtruck from './pages/Foodtruck'

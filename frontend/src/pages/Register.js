@@ -11,6 +11,8 @@ function Register() {
     password2: ''
   })
 
+  const [errors, setErrors] = useState([])
+
   const onChange = (e) => {
     e.preventDefault()
     setFormData((prevValue)=>{
@@ -21,8 +23,23 @@ function Register() {
     })
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
+
+    const formInfo = {
+      credentials: 'include',
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formData)
+    }
+    const response = await fetch('http://localhost:2006/auth/registerVendor')
+    const json = response.json()
+    if(!response.ok){
+      setErrors(json)
+    }else{
+      return
+    }
+
   }
 
   return (
