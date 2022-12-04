@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import FormInput from '../components/FormInput'
 
 function Register() {
 
