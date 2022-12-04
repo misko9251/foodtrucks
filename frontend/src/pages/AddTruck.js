@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import Foodtrucks from './Foodtrucks'
+import React, {useState} from 'react'
 
 function AddTruck() {
 
@@ -49,6 +48,7 @@ function AddTruck() {
             }
                 const response = await fetch('http://localhost:2006/trucks/addTruck', formInfo)
                 const json = await response.json()
+                console.log(json)
             } catch (error) {
                 console.log(error)
             }
@@ -86,7 +86,7 @@ function AddTruck() {
                 <button>Submit</button>
             </form>
             {previewSource && (
-                <img src={previewSource} style={{height: '300px'}} />
+                <img alt='preview' src={previewSource} style={{height: '300px'}} />
             )}
         </section>
     </>

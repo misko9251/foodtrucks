@@ -15,8 +15,8 @@ import MobileNav from './components/navbars/MobileNav';
 function App() {
   return (
     <div className='App'>
-      <MobileNav/>
       <Router>
+      <MobileNav/>
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/registerUser' element={<Registration />} />
