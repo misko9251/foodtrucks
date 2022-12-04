@@ -1,20 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '../components/Button'
 import {Link} from 'react-router-dom'
 import Logo from '../images/logo.png'
 import {BiMapPin} from 'react-icons/bi'
 import {BsTruck} from 'react-icons/bs'
 import {BsPersonPlus} from 'react-icons/bs'
+// Nav Icons
+import {AiOutlineMenu} from 'react-icons/ai'
+import {AiOutlineClose} from 'react-icons/ai'
+
 function Home() {
+
+  const [open, setOpen] = useState(false)
+
+  const hamburger = <AiOutlineMenu fontSize='40px' 
+  className='hamburger'
+  onClick={()=> setOpen(!open)}
+  />
+
+  const closeHamburger = <AiOutlineClose fontSize='40px' 
+  className='hamburger'
+  onClick={()=> setOpen(!open)}
+  />
+
   return (
     <div>
         <header>
-            <nav>
-                <ul>
-                    <li>VIEW TRUCKS</li>
-                    <li>BECOME A VENDOR</li>
-                </ul>
+
+            <nav className='nav'>
+                <div className='burger-container'>
+                    {!open && hamburger}
+                    {open && closeHamburger}
+                </div>
+                {open && (
+                    <ul className={open ? 'toggle ul' : 'ul'}>
+                        <li>VIEW TRUCKS</li>
+                        <li>BECOME A VENDOR</li>
+                    </ul>
+                )}
             </nav>
+
             <div className='logo-container'>
                 <img className='logo' src={Logo} alt='foodtruck logo'/>
             </div>
