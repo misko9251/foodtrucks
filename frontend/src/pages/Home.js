@@ -8,6 +8,7 @@ import {BsPersonPlus} from 'react-icons/bs'
 // Nav Icons
 import {AiOutlineMenu} from 'react-icons/ai'
 import {AiOutlineClose} from 'react-icons/ai'
+import MiniLogo from '../images/minilogo.png'
 
 function Home() {
 
@@ -31,13 +32,15 @@ function Home() {
                 <div className='burger-container'>
                     {!open && hamburger}
                     {open && closeHamburger}
+                    <img style={{width: '90px'}} src={MiniLogo} />
                 </div>
-                {open && (
                     <ul className={open ? 'toggle ul' : 'ul'}>
-                        <li>VIEW TRUCKS</li>
-                        <li>BECOME A VENDOR</li>
+                        <li>HOME</li>
+                        <li>FAQ</li>
+                        <li>SIGN IN</li>
+                        <li>REGISTER</li>
+                        <li>CONTACT</li>
                     </ul>
-                )}
             </nav>
 
             <div className='logo-container'>
