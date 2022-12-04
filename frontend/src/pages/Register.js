@@ -11,6 +11,7 @@ function Register() {
   })
 
   const [errors, setErrors] = useState([])
+  
   const errorMessages = errors.map((item, index)=>{
     return (
       <p style={{color: 'red'}} key={index}>{item.errorMsg}</p>

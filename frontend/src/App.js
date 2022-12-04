@@ -1,9 +1,10 @@
-import './App.css';
-import Home from './pages/Home';
+import './App.css'
+import Home from './pages/Home'
 import Register from './pages/Register'
-import AddTruck from './pages/AddTruck';
+import Login from './pages/Login'
+import AddTruck from './pages/AddTruck'
 import Foodtruck from './pages/Foodtruck'
-import Foodtrucks from './pages/Foodtrucks';
+import Foodtrucks from './pages/Foodtrucks'
 import {
   BrowserRouter as Router,
   Route,
@@ -21,6 +22,7 @@ function App() {
           <Route path='/myFoodTruck' element={<Foodtruck />} />
           <Route path='/foodtrucks' element={<Foodtrucks />} />
           <Route path='register' element={<Register />} />
+          <Route path='/login' element ={<Login />} />
           <Route path='/addTruck' element={<AddTruck />} />
         </Routes>
       </Router>
