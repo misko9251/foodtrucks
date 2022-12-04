@@ -10,10 +10,12 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import MobileNav from './components/navbars/MobileNav';
 
 function App() {
   return (
     <div className='App'>
+      <MobileNav/>
       <Router>
         <Routes>
           <Route path='/' element={<Home />}/>
