@@ -19,14 +19,16 @@ function Home() {
             <div>
                 <div>
                     <Link to='/foodtrucks' style={{textDecoration: 'none'}}>
-                        <Button logo={<BiMapPin fontSize='40px'/>} btnText='FIND FOODTRUCKS'/>
+                        <Button logo={<BiMapPin fontSize='40px' style={{color:'black'}}/>} btnText='FIND FOODTRUCKS'/>
                     </Link>
                 </div>
                 <div>
                     <Button logo={<BsTruck fontSize='40px' />} btnText='BROWSE ALL FOODTRUCKS'/>
                 </div>
                 <div>
-                    <Button logo={<BsPersonPlus fontSize='40px' />} btnText='BECOME A VENDOR'/>
+                    <Link to='/register' style={{textDecoration: 'none'}}>
+                        <Button logo={<BsPersonPlus fontSize='40px'style={{color:'black'}} />} btnText='BECOME A VENDOR'/>
+                    </Link>
                 </div>
             </div>
         </section>

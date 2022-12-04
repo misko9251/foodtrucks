@@ -52,7 +52,7 @@ function Foodtrucks(props) {
       <>
       <Map
       google = {props.google}
-      style = {{width: "100%", height: "100%"}}
+      style = {{width: "100%", height: "94%"}}
       zoom = {10}
       initialCenter={{ lat: 42.886448, lng: -78.878372}}
       >
