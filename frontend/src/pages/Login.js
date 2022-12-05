@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
 
@@ -7,7 +8,7 @@ function Login() {
         password: ''
     })
 
-    console.log(formData)
+    const [error, setError] = useState('')
 
     const onChange = (e) => {
         setFormData((prevVal)=>{
@@ -16,6 +17,12 @@ function Login() {
                 [e.target.name]: e.target.value
             }
         })
+    }
+
+    const navigate = useNavigate();
+
+    function redirect(){
+        navigate('/')
     }
     
     const onSubmit = async (e) => {
@@ -30,7 +37,11 @@ function Login() {
             }
             const response = await fetch('http://localhost:2006/auth/loginVendor', formInfo)
             const json = await response.json()
-            console.log(json)
+            if(json.message === 'Email not found' || json.message === 'Password incorrect' || json.message === 'Missing credentials'){
+                setError(json.message)
+            }if(json.message === 'Success'){
+                redirect()
+            }
         } catch (error) {
             console.log(error)
         }
@@ -41,6 +52,7 @@ function Login() {
         <section>
             <form onSubmit={onSubmit}>
                 <h2>Vendor Login</h2>
+                {error !== '' && <p>{error}</p>}
                 <input 
                 type='text'
                 name='email'

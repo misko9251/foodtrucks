@@ -4,17 +4,18 @@ const authController = require('../controllers/authController')
 const passport = require("passport");
 
 router.post('/registerVendor', authController.registerVendor)
-router.post('/loginVendor', (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
-      if (err) throw err;
-      if (!user) res.send({msg: 'No user'});
-      else {
-        req.logIn(user, (err) => {
-          if (err) throw err;
-          res.send({msg: 'Success'});
-        });
-      }
-    })(req, res, next);
-  });
+router.post('/loginVendor', (req, res, next) => {     
+  passport.authenticate('local', (err, user, info) => {       
+    if (err) {
+      return next(err); 
+    }if (!user) { 
+      return res.json(info); 
+    }req.logIn(user, (err) => {         
+      if (err) { 
+        return next(err); 
+      } return res.json({message: 'Success'});       
+    });     
+  })(req, res, next);   
+});
 
 module.exports = router
