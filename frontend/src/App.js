@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import AddTruck from './pages/AddTruck'
 import Foodtruck from './pages/Foodtruck'
 import Foodtrucks from './pages/Foodtrucks'
+import AcctMgr from './pages/AcctMgr'
 import {
   BrowserRouter as Router,
   Route,
@@ -24,6 +25,7 @@ function App() {
           <Route path='register' element={<Register />} />
           <Route path='/login' element ={<Login />} />
           <Route path='/addTruck' element={<AddTruck />} />
+          <Route path='/accountmanager' element={<AcctMgr />} />
         </Routes>
       </Router>
     </div>
