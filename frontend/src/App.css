@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Rubik:wght@400;500&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -28,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: 'Rubik';
 }
 ol, ul {
 	list-style: none;
@@ -143,11 +146,12 @@ button{
 }
 
 .menu-header{
+	font-family: 'Rubik';
 	color: white;
 	padding: 5%;
 	border: 1px solid black;
 	width: 80%;
-	height: 3.5rem;
+	height: 4rem;
 	font-size: 2rem;
 	display: flex;
 	justify-content: center;
@@ -170,12 +174,19 @@ button{
 }
 
 .menu-item{
+	font-family: 'Rubik';
 	padding: 3%;
 	text-align: center;
 	font-size: 1.5rem;
+	border-bottom: 1px dashed black;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
 }
 
 .menu-price{
+	font-family: 'Rubik';
 	font-size: 1.3rem;
 	color:  rgb(204, 83, 52);
 	display: inline-block;

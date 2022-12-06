@@ -8,7 +8,7 @@ function AcctMgrHeader() {
         async function fetchData(){
             try {
                 const response = await fetch(
-                    'http://localhost:2006/trucks/getTrucks',
+                    'http://localhost:2006/trucks/getMyTruck',
                     {credentials: 'include'}
                 );
                 const json = await response.json()
@@ -23,8 +23,9 @@ function AcctMgrHeader() {
     return (
       <>
           <header className='acct-mgr-header'>
+              <h1 style={{margin: '5%'}}>Account Manager</h1>
               <img width='300px' src={userInfo.image} alt='truck-logo'/>
-              <h1>{userInfo.name}</h1>
+              <h1 style={{fontSize: '2rem', marginTop: '5%', textAlign: 'center'}}>{userInfo.name}</h1>
               <p>{userInfo.address}</p>
           </header>
       </>

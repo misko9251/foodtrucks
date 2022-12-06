@@ -21,10 +21,18 @@ module.exports = {
     },
     getTrucks: async (req, res) => {
         try {
+            const trucks = await Truck.find()
+            res.status(200).json({trucks: trucks})
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    getMyTruck: async (req, res) => {
+        try {
             const trucks = await Truck.find({userId: req.user._id})
             res.status(200).json({trucks: trucks})
         } catch (error) {
             console.log(error)
         }
-    }
+    },
 }
