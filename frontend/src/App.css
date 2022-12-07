@@ -193,3 +193,31 @@ button{
 	vertical-align: top;
 	font-weight: bold;
 }
+
+.food-form{
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10%;
+	width: 80%;
+	height: 300px;
+	margin: 10% auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.food-input{
+	width: 80%;
+	height: 2rem;
+	margin: 2% 0;
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+.food-btn{
+	background-color: rgb(237, 228, 53);
+	border-radius: 5px;
+
+}

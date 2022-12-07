@@ -4,7 +4,9 @@ const truckController = require('../controllers/truckController')
 
 router.get('/getTrucks', truckController.getTrucks)
 router.get('/getMyTruck', truckController.getMyTruck)
+router.get('/getFoodItems', truckController.getFoodItems)
 router.post('/addTruck', truckController.addTruck)
+router.post('/addFoodItem', truckController.addFoodItem)
 
 
 module.exports = router
