@@ -3,7 +3,6 @@ import Home from './pages/Home'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import AddTruck from './pages/AddTruck'
-import Foodtruck from './pages/Foodtruck'
 import Foodtrucks from './pages/Foodtrucks'
 import AcctMgr from './pages/AcctMgr'
 import {
@@ -20,7 +19,6 @@ function App() {
       <MobileNav/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/myFoodTruck' element={<Foodtruck />} />
           <Route path='/foodtrucks' element={<Foodtrucks />} />
           <Route path='register' element={<Register />} />
           <Route path='/login' element ={<Login />} />
