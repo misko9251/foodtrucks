@@ -103,7 +103,7 @@ function Menu() {
             {food && (
               <>
                 <form onSubmit={addFood} className='food-form'>
-                  <div className='close-form' onClick={()=> setFood(false)}><GrFormClose /></div>
+                  <div className='close-form' onClick={()=> setFood(!food)}><GrFormClose /></div>
                   <legend>ADD SOME FOOD</legend>
                   <input
                   placeholder='Menu Item'

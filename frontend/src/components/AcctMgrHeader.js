@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {GrFormEdit} from 'react-icons/gr'
 
 function AcctMgrHeader() {
 
@@ -84,8 +85,7 @@ function AcctMgrHeader() {
               <h1 style={{margin: '5%'}}>Account Manager</h1>
               <img width='300px' src={userInfo.image} alt='truck-logo'/>
               <h1 style={{fontSize: '2rem', marginTop: '5%', textAlign: 'center'}}>{userInfo.name}</h1>
-              <p>{userInfo.address}, {userInfo.city}, {userInfo.state} {userInfo.zip}</p>
-              {!changeAddress && <button onClick={toggleAddress} className='update-truck-btn'>Update Truck Location!</button>}
+              <p>{userInfo.address}, {userInfo.city}, {userInfo.state} {userInfo.zip} <span onClick={toggleAddress}><GrFormEdit /></span></p>
               {changeAddress && (
                 <>
                     <form className='basic-form' onSubmit={onSubmit}>
