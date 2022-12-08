@@ -55,5 +55,13 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    deleteFoodItem: async (req, res) => {
+        try {
+            await Menu.findByIdAndRemove({_id: req.params.id}).exec()
+            res.status(200).json({msg: 'Item removed'})
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

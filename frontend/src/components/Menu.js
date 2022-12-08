@@ -3,6 +3,7 @@ import Button from './Button'
 import {Link} from 'react-router-dom'
 import {GrAdd} from 'react-icons/gr'
 import {BiMapPin} from 'react-icons/bi'
+import {FiDelete} from 'react-icons/fi'
 
 function Menu() {
 
@@ -61,9 +62,25 @@ function Menu() {
 
   const menuItems = myMenu.map((item, index)=> {
     return (
-      <div key={index} className='menu-item'>{item.food}  <span className='menu-price'>${item.price}</span></div>
+      <div key={index} className='menu-item'><span onClick={()=> deleteFoodItem(item._id)}>{<FiDelete />}</span>{item.food}  <span className='menu-price'>${item.price}</span></div>
     )
   })
+
+  async function deleteFoodItem(id){
+    try {
+      const formInfo = {
+        credentials: 'include',
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({_id: id})
+      }
+      const response = await fetch(`http://localhost:2006/trucks/deleteFoodItem/${id}`, formInfo)
+      const data = await response.json()
+      setMyMenu((prevValue)=> prevValue.filter((item)=> item._id !== id))
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>

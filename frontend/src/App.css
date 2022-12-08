@@ -177,9 +177,9 @@ button{
 	font-family: 'Rubik';
 	padding: 3%;
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	border-bottom: 1px dashed black;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;
