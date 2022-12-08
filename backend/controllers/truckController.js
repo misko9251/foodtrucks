@@ -12,6 +12,9 @@ module.exports = {
                 name: req.body.name,
                 coordinates: req.body.coordinates,
                 address: req.body.address,
+                city: req.body.city,
+                state: req.body.state,
+                zip: req.body.zip,
                 image: result.secure_url,
                 userId: req.user._id
             })
