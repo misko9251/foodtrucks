@@ -12,6 +12,9 @@ module.exports = {
                 name: req.body.name,
                 coordinates: req.body.coordinates,
                 address: req.body.address,
+                city: req.body.city,
+                state: req.body.state,
+                zip: req.body.zip,
                 image: result.secure_url,
                 userId: req.user._id
             })
@@ -60,6 +63,20 @@ module.exports = {
         try {
             await Menu.findByIdAndRemove({_id: req.params.id}).exec()
             res.status(200).json({msg: 'Item removed'})
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    updateTruck: async (req, res) => {
+        try {
+            await Truck.findByIdAndUpdate({_id: req.params.id}, {
+                address: req.body.address,
+                city: req.body.city,
+                state: req.body.state,
+                zip: req.body.zip,
+                coordinates: req.body.coordinates,
+            })
+            res.status(200).json({msg: 'Address updated'})
         } catch (error) {
             console.log(error)
         }
