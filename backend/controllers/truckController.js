@@ -66,5 +66,19 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    updateTruck: async (req, res) => {
+        try {
+            await Truck.findByIdAndUpdate({_id: req.params.id}, {
+                address: req.body.address,
+                city: req.body.city,
+                state: req.body.state,
+                zip: req.body.zip,
+                coordinates: req.body.coordinates,
+            })
+            res.status(200).json({msg: 'Address updated'})
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
