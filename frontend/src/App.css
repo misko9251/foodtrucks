@@ -200,7 +200,7 @@ button{
 	border-radius: 10px;
 	padding: 10%;
 	width: 80%;
-	height: 300px;
+	height: 400px;
 	margin: 10% auto;
 	display: flex;
 	flex-direction: column;
@@ -217,9 +217,16 @@ button{
 }
 
 .food-btn{
-	background-color: rgb(237, 228, 53);
+	background-color: rgb(238, 187, 69);
 	border-radius: 5px;
 
+}
+
+.close-form{
+	display: flex;
+	/* width: 100%; */
+	align-self: flex-end;
+	font-size: 1.3rem;
 }
 
 .update-truck-btn{

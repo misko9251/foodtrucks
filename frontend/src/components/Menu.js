@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {GrAdd} from 'react-icons/gr'
 import {BiMapPin} from 'react-icons/bi'
 import {FiDelete} from 'react-icons/fi'
+import {GrFormClose} from 'react-icons/gr'
 
 function Menu() {
 
@@ -102,6 +103,7 @@ function Menu() {
             {food && (
               <>
                 <form onSubmit={addFood} className='food-form'>
+                  <div className='close-form' onClick={()=> setFood(false)}><GrFormClose /></div>
                   <legend>ADD SOME FOOD</legend>
                   <input
                   placeholder='Menu Item'
