@@ -8,8 +8,12 @@ function AddTruck() {
         address: '',
         city: '',
         state: '',
-        zip: ''
+        zip: '',
+        cuisine1: '',
+        cuisine2: ''
     })
+
+    console.log(formData)
     const [fileInputState, setFileInputState] = useState('');
     const [previewSource, setPreviewSource] = useState('');
 
@@ -35,7 +39,6 @@ function AddTruck() {
     const onSubmit = async (e) => {
         e.preventDefault()
         const address = `${formData.address} ${formData.city} ${formData.state} ${formData.zip}`
-        console.log(address)
         const response = await fetch(
             `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyAM_ZDWScTtrIjcZGGgrGSv-HC3PYz3u0U`
         )
@@ -101,6 +104,23 @@ function AddTruck() {
                 value={formData.zip}
                 onChange={onChange}
                 />
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <label>Enter two cuisine types - this will let users know what type of food you sell</label>
+                <input
+                name='cuisine1'
+                type='text'
+                placeholder='Cuisine Type 1'
+                value={formData.cuisine1}
+                onChange={onChange}
+                />
+                <input
+                name='cuisine2'
+                type='text'
+                placeholder='Cuisine Type 2'
+                value={formData.cuisine2}
+                onChange={onChange}
+                />
+                </div>
                 <input
                 id="fileInput"
                 type="file"

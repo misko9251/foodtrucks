@@ -16,7 +16,9 @@ module.exports = {
                 state: req.body.state,
                 zip: req.body.zip,
                 image: result.secure_url,
-                userId: req.user._id
+                userId: req.user._id,
+                cuisine1: req.body.cuisine1,
+                cuisine2: req.body.cuisine2
             })
             res.status(201).json({truck: truck})
         } catch (error) {

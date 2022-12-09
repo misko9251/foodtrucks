@@ -29,6 +29,18 @@ const truckSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    cuisine1: {
+        type: String,
+        required: true
+    },
+    cuisine2: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     userId: {
         type: String,
         required: true
