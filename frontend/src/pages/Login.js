@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import MiniLogo from '../images/minilogo.png'
 
 function Login() {
 
@@ -49,8 +50,11 @@ function Login() {
 
     return (
       <>
-        <section>
-            <form onSubmit={onSubmit}>
+        <section className='form-container'>
+            <div className='form-img-container'>
+                <img src={MiniLogo} alt='alt logo' />
+            </div>
+            <form className='login-register-form' onSubmit={onSubmit}>
                 <h2>Vendor Login</h2>
                 {error !== '' && <p>{error}</p>}
                 <input 
