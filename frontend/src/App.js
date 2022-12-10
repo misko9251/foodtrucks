@@ -10,14 +10,20 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
+  useLocation
 } from "react-router-dom";
 import MobileNav from './components/navbars/MobileNav';
 
 function App() {
+  const location = useLocation()
+
   return (
     <div className='App'>
-      <Router>
-      <MobileNav/>
+      {location.pathname !== '/login' && location.pathname !== '/register' && 
+        <nav>
+          <MobileNav/>
+        </nav>
+      }
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/foodtrucks' element={<Foodtrucks />} />
@@ -27,7 +33,6 @@ function App() {
           <Route path='/accountmanager' element={<AcctMgr />} />
           <Route path='/list' element={<ListView />} />
         </Routes>
-      </Router>
     </div>
   );
 }
