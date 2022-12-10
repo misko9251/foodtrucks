@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import MiniLogo from '../images/minilogo.png'
+import {
+  Link
+} from "react-router-dom";
 
 function Register() {
 
@@ -52,7 +55,11 @@ function Register() {
   return (
     <>
       <section className='form-container'>
-      <div className='form-img-container'><img src={MiniLogo} alt='alt logo' /></div>
+        <Link to='/'>
+          <div className='form-img-container'>
+              <img src={MiniLogo} alt='alt logo' />
+          </div>
+        </Link>
         <form className='login-register-form' onSubmit={onSubmit}>
           <h2>Truck Vendor Registration</h2>
           {errors.length > 0 && errorMessages}

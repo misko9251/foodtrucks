@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import MiniLogo from '../images/minilogo.png'
+import {
+    Link
+  } from "react-router-dom";
 
 function AddTruck() {
 
@@ -76,9 +79,11 @@ function AddTruck() {
                     </div>
                 </section>
             ) : (
-                <div className='form-img-container'>
-                <img src={MiniLogo} alt='alt logo' />
-                </div>
+                <Link to='/'>
+                    <div className='form-img-container'>
+                        <img src={MiniLogo} alt='alt logo' />
+                    </div>
+                </Link>
             ) 
             }
             <form className='login-register-form' onSubmit={onSubmit}>
