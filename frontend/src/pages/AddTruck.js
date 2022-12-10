@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import MiniLogo from '../images/minilogo.png'
 
 function AddTruck() {
 
@@ -66,9 +67,22 @@ function AddTruck() {
 
   return (
     <>
-        <section>
-            <legend>Add your truck information</legend>
-            <form className='basic-form' onSubmit={onSubmit}>
+        <section className='form-container'>
+        {previewSource ? (
+                <section>
+                    <div style={{textAlign: 'center'}}>
+                        <h3>This photo will be used to represent your truck</h3>
+                        <img alt='preview' src={previewSource} style={{height: '200px'}} />
+                    </div>
+                </section>
+            ) : (
+                <div className='form-img-container'>
+                <img src={MiniLogo} alt='alt logo' />
+                </div>
+            ) 
+            }
+            <form className='login-register-form' onSubmit={onSubmit}>
+            <legend style={{marginBottom: '3%'}}>Add your truck information</legend>
                 <input
                 name='name'
                 type='text'
@@ -104,8 +118,6 @@ function AddTruck() {
                 value={formData.zip}
                 onChange={onChange}
                 />
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                <label>Enter two cuisine types - this will let users know what type of food you sell</label>
                 <input
                 name='cuisine1'
                 type='text'
@@ -120,7 +132,6 @@ function AddTruck() {
                 value={formData.cuisine2}
                 onChange={onChange}
                 />
-                </div>
                 <input
                 id="fileInput"
                 type="file"
@@ -131,12 +142,6 @@ function AddTruck() {
                 />
                 <button>Submit</button>
             </form>
-            {previewSource && (
-                <section>
-                    <h3>This photo will be used to represent your truck</h3>
-                    <img alt='preview' src={previewSource} style={{height: '300px'}} />
-                </section>
-            )}
         </section>
     </>
   )

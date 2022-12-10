@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className='App'>
-      {location.pathname !== '/login' && location.pathname !== '/register' && 
+      {location.pathname !== '/login' && location.pathname !== '/register' && location.pathname !== '/addTruck' && 
         <nav>
           <MobileNav/>
         </nav>
