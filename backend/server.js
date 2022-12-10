@@ -38,7 +38,9 @@ app.use(passport.session())
 app.use('/trucks', truckRoutes)
 app.use('/auth', authRoutes)
 app.get('/getUser', (req, res)=>{
-    res.send(req.user._id)
+    const authenticated = req.isAuthenticated()
+    // res.status(200).json({authenticated: authenticated})
+    res.send(authenticated)
 })
 
 app.listen(process.env.PORT, (req, res)=>{

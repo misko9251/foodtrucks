@@ -17,5 +17,13 @@ router.post('/loginVendor', (req, res, next) => {
     });     
   })(req, res, next);   
 });
+router.get('/logout', (req, res)=>{
+  req.logout((err)=>{
+      if(err){
+          return next(err)
+      }
+      res.send({msg: 'User has logged out'})
+  })
+})
 
 module.exports = router
