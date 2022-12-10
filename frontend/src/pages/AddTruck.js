@@ -82,7 +82,7 @@ function AddTruck() {
             ) 
             }
             <form className='login-register-form' onSubmit={onSubmit}>
-            <legend style={{marginBottom: '3%'}}>Add your truck information</legend>
+            <legend style={{marginBottom: '3%', fontSize: '1.3rem'}}>Add your truck information</legend>
                 <input
                 name='name'
                 type='text'
@@ -121,17 +121,18 @@ function AddTruck() {
                 <input
                 name='cuisine1'
                 type='text'
-                placeholder='Cuisine Type 1'
+                placeholder='Cuisine Type (e.g. Tacos)'
                 value={formData.cuisine1}
                 onChange={onChange}
                 />
                 <input
                 name='cuisine2'
                 type='text'
-                placeholder='Cuisine Type 2'
+                placeholder='Cuisine Type (e.g. Greek)'
                 value={formData.cuisine2}
                 onChange={onChange}
                 />
+                <label>Truck Photo</label>
                 <input
                 id="fileInput"
                 type="file"
