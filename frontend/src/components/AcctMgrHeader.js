@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {GrFormEdit} from 'react-icons/gr'
+import Spinner from './Spinner'
 
 function AcctMgrHeader() {
 
@@ -15,6 +16,7 @@ function AcctMgrHeader() {
         state: '',
         zip: ''
     })
+    const [loading, setLoading] = useState(true)
 
     // Grab truck information and save in state
     useEffect(()=>{
@@ -26,6 +28,7 @@ function AcctMgrHeader() {
                 );
                 const json = await response.json()
                 setUserInfo(json.trucks[0])
+                setLoading(false)
             } catch (error) {
                 
             }
@@ -81,6 +84,9 @@ function AcctMgrHeader() {
 
     return (
       <>
+      {loading && (
+        <Spinner />
+      )}
           <header className='acct-mgr-header'>
               <h1 style={{margin: '5%'}}>Account Manager</h1>
               <img width='300px' src={userInfo.image} alt='truck-logo'/>

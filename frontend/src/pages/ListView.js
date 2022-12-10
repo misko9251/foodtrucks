@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Spinner from '../components/Spinner'
 
 function ListView() {
 
     const [allTrucks, setAllTrucks] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
         async function fetchData(){
@@ -13,6 +15,7 @@ function ListView() {
                 )
                 const json = await response.json()
                 setAllTrucks(json.trucks)
+                setLoading(false)
             } catch (error) {
                 console.log(error)
             }
@@ -45,6 +48,9 @@ function ListView() {
     return (
       <>
           <section>
+            {loading && (
+                <Spinner />
+            )}
             {list}
           </section>
       </>
