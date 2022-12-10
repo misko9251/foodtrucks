@@ -23,7 +23,9 @@ function Home() {
                     </Link>
                 </div>
                 <div>
-                    <Button logo={<BsTruck fontSize='40px' />} btnText='BROWSE ALL FOODTRUCKS'/>
+                    <Link to='/list' style={{textDecoration: 'none'}}>
+                        <Button logo={<BsTruck fontSize='40px' style={{color: 'black'}}/> }  btnText='BROWSE ALL FOODTRUCKS'/>
+                    </Link>
                 </div>
                 <div>
                     <Link to='/register' style={{textDecoration: 'none'}}>
