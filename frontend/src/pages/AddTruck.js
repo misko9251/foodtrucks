@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import MiniLogo from '../images/minilogo.png'
 import {
-    Link
+    Link,
+    redirect,
+    useNavigate
   } from "react-router-dom";
+import Spinner from '../components/Spinner';
 
 function AddTruck() {
 
@@ -16,10 +19,9 @@ function AddTruck() {
         cuisine1: '',
         cuisine2: ''
     })
-
-    console.log(formData)
     const [fileInputState, setFileInputState] = useState('');
     const [previewSource, setPreviewSource] = useState('');
+    const [loading, setLoading] = useState(false)
 
     const onChange = (e) => {
         setFormData((prevValue)=>{
@@ -41,6 +43,7 @@ function AddTruck() {
     };
   
     const onSubmit = async (e) => {
+        setLoading(true)
         e.preventDefault()
         const address = `${formData.address} ${formData.city} ${formData.state} ${formData.zip}`
         const response = await fetch(
@@ -62,15 +65,26 @@ function AddTruck() {
             }
                 const response = await fetch('http://localhost:2006/trucks/addTruck', formInfo)
                 const json = await response.json()
-                console.log(json)
+                if(response.ok){
+                    setLoading(false)
+                    redirect()
+                }
             } catch (error) {
                 console.log(error)
             }
     }
 
+    const navigate = useNavigate();
+
+    // Redirect functions
+    function redirect(){
+      navigate('/accountmanager')
+    }
+
   return (
     <>
         <section className='form-container'>
+        {loading && <Spinner />}
         {previewSource ? (
                 <section>
                     <div style={{textAlign: 'center'}}>
@@ -146,7 +160,7 @@ function AddTruck() {
                 value={fileInputState}
                 className="form-input"
                 />
-                <button>Submit</button>
+                {!loading && <button>Submit</button>}
             </form>
         </section>
     </>

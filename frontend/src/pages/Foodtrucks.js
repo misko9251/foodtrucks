@@ -41,7 +41,7 @@ function Foodtrucks(props) {
       return(
         <Marker 
         key={index}
-        name={item.name} 
+        name={item.name}
         position={{lat: latitude, lng: longitude}} 
         onClick={onMarkerClick}
         icon={{
@@ -59,6 +59,11 @@ function Foodtrucks(props) {
       style = {{width: "100%", height: "94%"}}
       zoom = {10}
       initialCenter={{ lat: 42.886448, lng: -78.878372}}
+      mapTypeControl={true}
+      mapTypeControlOptions={{
+        style: props.google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        position: props.google.maps.ControlPosition.TOP_RIGHT
+      }}
       >
           {Markers}
           <InfoWindow
