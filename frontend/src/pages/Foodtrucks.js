@@ -44,6 +44,10 @@ function Foodtrucks(props) {
         name={item.name} 
         position={{lat: latitude, lng: longitude}} 
         onClick={onMarkerClick}
+        icon={{
+          url: require('../images/marker.png'),
+          scaledSize: new props.google.maps.Size(60, 42)
+        }}
         />
       )
     })
