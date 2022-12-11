@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Spinner from '../components/Spinner'
+import VendorProfile from './VendorProfile'
 
 function ListView() {
 
     const [allTrucks, setAllTrucks] = useState([])
     const [loading, setLoading] = useState(true)
+    const [profile, setProfile] = useState(null)
 
     useEffect(()=>{
         async function fetchData(){
@@ -23,9 +25,26 @@ function ListView() {
         fetchData()
     })
 
+    async function getMenu(id){
+        console.log(id)
+        try {
+            const response = await fetch(
+                `http://localhost:2006/trucks/getMenu/${id}`,
+                {credentials: 'include'}
+            )
+            const data = await response.json()
+            console.log(data)
+            if(response.ok){
+                setProfile(data)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const list = allTrucks.map((item, index)=> (
 
-            <div key={index} style={{paddingBottom: '3%', borderBottom: '10px solid rgb(44,104,246)', borderTop: '10px solid gray'}}>
+            <div key={index} onClick={()=> getMenu(item.userId)} style={{paddingBottom: '3%', borderBottom: '10px solid rgb(44,104,246)', borderTop: '10px solid gray'}}>
                 <div style={{position: 'relative'}}>
                     <div style={{position: 'absolute', top: '10px', left: '10px', border: '2px solid black', background: 'white', padding: '2%'}}>
                         {
@@ -48,10 +67,19 @@ function ListView() {
     return (
       <>
           <section>
+            {profile !== null && (
+                <>
+                    <VendorProfile data={profile}/>
+                </>
+            )}
             {loading && (
                 <Spinner />
             )}
-            {list}
+            {profile == null && (
+                <>
+                {list}
+                </>
+            )}
           </section>
       </>
     )
