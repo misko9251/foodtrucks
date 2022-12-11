@@ -82,5 +82,10 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    getMenu: async (req, res) => {
+        const menu = await Menu.find({userId: req.params.id})
+        const truck = await Truck.find({userId: req.params.id})
+        res.status(200).json({menu: menu, truck: truck})
     }
 }
