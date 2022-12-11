@@ -90,7 +90,7 @@ function Menu() {
               <>
               <div className='menu-header'>GRUB</div>
               <div className='menu-body'>
-                {menuItems}
+                {menuItems.length === 0 ? <h2 style={{textAlign: 'center'}}>It looks like you haven't added any items to your menu.</h2> : menuItems}
               </div>
               <div onClick={toggleAddFood}>
                 <Button logo={<GrAdd fontSize='40px' style={{color:'black'}}/>} btnText='ADD SOME FOOD'/>

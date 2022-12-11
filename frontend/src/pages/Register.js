@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import MiniLogo from '../images/minilogo.png'
 import {
-  Link
+  Link, useNavigate
 } from "react-router-dom";
 
 function Register() {
@@ -44,12 +44,17 @@ function Register() {
     }
     const response = await fetch('http://localhost:2006/auth/registerVendor', formInfo)
     const json = await response.json()
-   if(!response.ok){
-    setErrors(json)
-   }else{
-    return
+    if(!response.ok){
+     setErrors(json)
+    }else{
+    redirect()
    }
+  }
 
+  const navigate = useNavigate();
+
+  function redirect(){
+      navigate('/login')
   }
 
   return (

@@ -6,6 +6,7 @@ import AddTruck from './pages/AddTruck'
 import Foodtrucks from './pages/Foodtrucks'
 import ListView from './pages/ListView'
 import AcctMgr from './pages/AcctMgr'
+import MyAccount from './pages/MyAccount'
 import {
   BrowserRouter as Router,
   Route,
@@ -30,7 +31,7 @@ function App() {
           <Route path='register' element={<Register />} />
           <Route path='/login' element ={<Login />} />
           <Route path='/addTruck' element={<AddTruck />} />
-          <Route path='/accountmanager' element={<AcctMgr />} />
+          <Route path='/accountmanager' element={<MyAccount />} />
           <Route path='/list' element={<ListView />} />
         </Routes>
     </div>
