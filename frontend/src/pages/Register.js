@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import MiniLogo from '../images/minilogo.png'
+import MiniLogo from '../components/MiniLogo';
 import {
   Link, useNavigate
 } from "react-router-dom";
@@ -60,11 +60,7 @@ function Register() {
   return (
     <>
       <section className='form-container'>
-        <Link to='/'>
-          <div className='form-img-container'>
-              <img src={MiniLogo} alt='alt logo' />
-          </div>
-        </Link>
+        <MiniLogo />
         <form className='login-register-form' onSubmit={onSubmit}>
           <h2>Truck Vendor Registration</h2>
           {errors.length > 0 && errorMessages}
