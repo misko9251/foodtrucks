@@ -396,3 +396,27 @@ img{
 .contact-section > h1 + p + p {
 	padding: 10%;
 }
+
+.contact-form{
+	border: 1px solid black;
+	background-color: white;
+	width: 80%;
+	margin: 0 auto;
+	padding: 5%;
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-form label{
+	display: block;
+}
+
+.contact-form button{
+	border-radius: 10px;
+	margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea{
+	width: 100%;
+	margin-bottom: 3%;
+}

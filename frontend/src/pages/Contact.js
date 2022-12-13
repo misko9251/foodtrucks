@@ -40,10 +40,11 @@ function Contact() {
               <h1>LET'S CHAT!</h1>
               <p>We can't wait to discuss your business needs and answer any of your questions. Enter your details below and we will get back to you as soon as possible.</p>
               <p>We all love a tasty foodtruck upstate!</p>
-              <button>Add Details</button>
+
           </section>
           <section>
-            <form onSubmit={handleSubmit}>
+            <form className='contact-form' onSubmit={handleSubmit}>
+                <legend style={{textAlign: 'center'}}>Contact Us</legend>
                 <div>
                     <label>Name:</label>
                     <input 
