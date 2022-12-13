@@ -29,6 +29,11 @@ function Contact() {
             })
             setStatus('Send')
             let result = await response.json()
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            })
         } catch (error) {
             console.log(error)
         }
