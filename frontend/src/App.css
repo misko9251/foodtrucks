@@ -372,3 +372,27 @@ img{
 	justify-content: center;
 	align-items: center;
 } 
+
+.contact-section{
+	margin: 10% auto;
+	text-align: center;
+	width: 70%;
+}
+
+.contact-section button{
+	border-radius: 10px;
+}
+
+.contact-section h1{
+	font-size: 2rem;
+	margin: 3%;
+}
+
+.contact-section > h1 + p {
+	padding-bottom: 10%;
+	border-bottom: 4px solid rgb(195, 188, 188);
+}
+
+.contact-section > h1 + p + p {
+	padding: 10%;
+}
