@@ -244,10 +244,28 @@ button{
 .basic-form{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	border-radius: 5px;
 	width: 80%;
 	padding: 5%;
 	border: 1px solid black;
-	margin: 0 auto;
+	margin: 3% auto;
+}
+
+.basic-form button{
+	margin-top: 3%;
+	border-radius: 10px;
+}
+
+.basic-form input{
+	color: rgb(179, 188, 194);
+	height: 2.5rem;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgb(62, 75, 96);
+	margin: 3% 0;
+	width: 60%;
 }
 
 .form-container{

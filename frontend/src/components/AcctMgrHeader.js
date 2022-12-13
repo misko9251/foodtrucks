@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {GrFormEdit} from 'react-icons/gr'
 import Spinner from './Spinner'
+import {GrFormClose} from 'react-icons/gr'
 
 function AcctMgrHeader() {
 
@@ -95,6 +96,8 @@ function AcctMgrHeader() {
               {changeAddress && (
                 <>
                     <form className='basic-form' onSubmit={onSubmit}>
+                    <div className='close-form' onClick={toggleAddress}><GrFormClose /></div>
+                    <legend>UPDATE ADDRESS</legend>
                         <input 
                         name='address'
                         type='text'
