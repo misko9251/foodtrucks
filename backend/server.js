@@ -5,6 +5,7 @@ const MongoStore = require('connect-mongo')
 const passport = require('passport')
 const session = require('express-session')
 const connectDB = require('./config/db')
+const nodemailer = require('nodemailer')
 const truckRoutes = require('./routes/truckRoutes')
 const authRoutes = require('./routes/authRoutes')
 require('dotenv').config({path: './config/.env'})
@@ -42,6 +43,44 @@ app.get('/getUser', (req, res)=>{
     // res.status(200).json({authenticated: authenticated})
     res.send(authenticated)
 })
+
+// Contact
+const contactEmail = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PW
+  },
+});
+
+app.post("/contact", (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message; 
+    const mail = {
+      from: name,
+      to: "***************@gmail.com",
+      subject: "Contact Form Submission",
+      html: `<p>Name: ${name}</p>
+             <p>Email: ${email}</p>
+             <p>Message: ${message}</p>`,
+    };
+    contactEmail.sendMail(mail, (error) => {
+      if (error) {
+        res.json({ status: "ERROR" });
+      } else {
+        res.json({ status: "Message Sent" });
+      }
+    });
+  });
+
+contactEmail.verify((error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Ready to Send");
+    }
+  });
 
 app.listen(process.env.PORT, (req, res)=>{
     console.log(`Server running on Port ${process.env.PORT}`)
