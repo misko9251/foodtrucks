@@ -82,6 +82,6 @@ contactEmail.verify((error) => {
     }
   });
 
-app.listen(process.env.PORT, (req, res)=>{
+app.listen(process.env.PORT || 2001, (req, res)=>{
     console.log(`Server running on Port ${process.env.PORT}`)
 })

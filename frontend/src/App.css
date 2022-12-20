@@ -400,6 +400,7 @@ img{
 .contact-form{
 	border: 1px solid black;
 	background-color: white;
+	border-radius: 10px;
 	width: 80%;
 	margin: 0 auto;
 	padding: 5%;
