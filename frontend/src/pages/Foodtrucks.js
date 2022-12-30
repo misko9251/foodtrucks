@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Map, GoogleApiWrapper, Marker, InfoWindow} from 'google-maps-react'
+import {Link} from 'react-router-dom'
 
  
 function Foodtrucks(props) {
@@ -65,6 +66,9 @@ function Foodtrucks(props) {
         position: props.google.maps.ControlPosition.TOP_RIGHT
       }}
       >
+          <Link to='/list'>
+              <h3 className="my-heading">List</h3>
+          </Link>
           {Markers}
           <InfoWindow
           marker={state.activeMarker}
