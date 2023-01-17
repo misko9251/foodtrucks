@@ -3,10 +3,11 @@
 <p>Vendor’s can create an account to host information about their food trucks, such as current location, menu, prices, etc. This application built with the MERN stack also takes advantage of the Google Maps API to display exact location of a truck at any time. Users can view the map without the hassle of creating an account and decide where they want to have lunch next! Vendors can update their location as their truck changes location through town!</p>
 
 ## Built With
-![image](https://user-images.githubusercontent.com/101610922/212815616-1205df06-396f-4313-a547-9f96d7b95840.png)
-![image](https://user-images.githubusercontent.com/101610922/212815775-c2a83e5e-2e5b-4a9f-b226-8ef10613715d.png)
-![image](https://user-images.githubusercontent.com/101610922/212815674-86f8455c-6795-40b7-abe4-c33241c94c9c.png)
+![image](https://user-images.githubusercontent.com/101610922/212816089-eef235f3-7057-46a9-b12b-cb5ebd792cbf.png)
+![image](https://user-images.githubusercontent.com/101610922/212816107-fc4bf22f-8ee2-4497-a3d7-5a52c90edd61.png)
+![image](https://user-images.githubusercontent.com/101610922/212816059-0ac77fd1-6378-4769-b574-0f6b07124288.png)
 ![image](https://user-images.githubusercontent.com/101610922/212816001-901e868d-c19a-4a04-acb3-cdfb49fc985e.png)
+![image](https://user-images.githubusercontent.com/101610922/212816144-068a62c6-10f3-4138-a099-e599fad21cff.png)
 
 
 ## Getting Started
