@@ -14,4 +14,9 @@ Main Page<br>
 Vendor Dashboard<br>
 <img src="https://user-images.githubusercontent.com/101610922/212813933-44896bbe-d3bb-48dc-a392-32bb1586a7e2.gif" width="30%" height="auto">
 
+Foodtruck Map courtesy of GoogleMap API<br>
+<img src="https://user-images.githubusercontent.com/101610922/212814228-72be1953-7890-4283-a4de-11ff19bc4f2e.png" width="30%" height="auto">
+
+
+
 
