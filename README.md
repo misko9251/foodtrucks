@@ -17,6 +17,13 @@ Vendor Dashboard<br>
 Foodtruck Map courtesy of GoogleMap API<br>
 <img src="https://user-images.githubusercontent.com/101610922/212814228-72be1953-7890-4283-a4de-11ff19bc4f2e.png" width="50%" height="auto">
 
+List view of current trucks, inspired by Zillow list view<br>
+<img src="https://user-images.githubusercontent.com/101610922/212815251-4b4232e7-3959-48b2-881b-eb5ddff9e095.gif" width="50%" height="auto">
+
+
+
+
+
 
 
 
