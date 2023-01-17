@@ -11,6 +11,7 @@
 Main Page<br>
 <img src="https://user-images.githubusercontent.com/101610922/212812600-3cbbb6ec-6ac9-4314-94b5-789275ce59c1.png" width="30%" height="auto">
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/101610922/212813933-44896bbe-d3bb-48dc-a392-32bb1586a7e2.gif)
+Vendor Dashboard<br>
+<img src="https://user-images.githubusercontent.com/101610922/212813933-44896bbe-d3bb-48dc-a392-32bb1586a7e2.gif" width="30%" height="auto">
 
 
