@@ -8,6 +8,6 @@
 3. Create config file for PORT, MongoDB string, and Cloudinary Info
 4. Run local host
 
-Main Page
-<img src="https://user-images.githubusercontent.com/101610922/212812600-3cbbb6ec-6ac9-4314-94b5-789275ce59c1.png" width="50%" height="auto">
+Main Page<br>
+<img src="https://user-images.githubusercontent.com/101610922/212812600-3cbbb6ec-6ac9-4314-94b5-789275ce59c1.png" width="30%" height="auto">
 
