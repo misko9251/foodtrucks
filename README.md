@@ -9,4 +9,5 @@
 4. Run local host
 
 Main Page
-![image](https://user-images.githubusercontent.com/101610922/212812600-3cbbb6ec-6ac9-4314-94b5-789275ce59c1.png)
+<img src="https://user-images.githubusercontent.com/101610922/212812600-3cbbb6ec-6ac9-4314-94b5-789275ce59c1.png" width="50%" height="auto">
+
